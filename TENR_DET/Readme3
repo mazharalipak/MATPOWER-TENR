@@ -1,1 +1,5 @@
 
+Install the folder in Matpower Tool Box
+Main function tnr_test(datain,step)
+datain=case9,....
+step=should be choosen from 0 to 1
