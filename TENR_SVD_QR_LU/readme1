@@ -1,1 +1,10 @@
 
+Install the folder in Matpower Tool Box
+Main function tnr_test(datain,step,Lambda)
+datain=case9,....
+step=should be choosen from 0 to 1
+Lambda=0, initial state of the system
+In order to scheck the svd, lu or qr transversality
+Change the following functions in the "tnr_init" file..
+tnr.G = @G_svd;,  tnr.G = @G_qr; or  tnr.G = @G_lu;
+tnr.dGdz = @dGdz_svd;  tnr.dGdz = @dGdz_qr; or  tnr.dGdz = @dGdz_lu;
