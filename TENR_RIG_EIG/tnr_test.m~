@@ -1,0 +1,35 @@
+testcase = 'case39';
+
+mpc = loadcase(testcase);
+mpc = ext2int(mpc);
+
+sol = runpf(mpc);
+
+tnr = tnr_init(sol);
+x = V2x_pf(tnr.V0, tnr);
+l = 1;
+z = [];
+
+
+
+step=0.0;
+Tol = 1;  
+Iter = 1;
+counter = 0;
+while (Tol > 1e-3)  
+
+
+[ dx, dl, dz, dGdxl,dv, dMM ] = tnr_step( x, l, z, tnr);
+
+x=x+step*dx;
+l=l+step*dl;
+%z=z+step*dz;
+
+ Iter = Iter + 1;
+      Tol=max(abs(dMM));  
+    counter = counter + 1;
+    if counter == 100;
+        break;
+    end    
+end
+
