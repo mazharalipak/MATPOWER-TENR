@@ -7,12 +7,12 @@ function [ G, u, v, E_M, F_M] = G_lu(J, z)
 % The code can be optimized if an impartial LU can be used for computing only smallest Pibot in U matrix
 
 tol=1e-10;
-[L_Mat, U_Mat, P_Mat, Q_Mat]=lucp(J,tol,'sparse');      %% option 1.......
+[L_Mat, U_Mat, P_Mat, Q_Mat]=lucp(J,tol,'sparse');      %% option 1
 
 %%
 
 % thresh=1e-10;
-% [L_Mat, U_Mat, P_Mat, Q_Mat]=lu(J, thresh, 'vector');  %% option 2...... 
+% [L_Mat, U_Mat, P_Mat, Q_Mat]=lu(J, thresh, 'vector');  %% option 2
 
 %%
 
