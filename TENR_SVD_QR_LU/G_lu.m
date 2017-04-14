@@ -1,4 +1,4 @@
-function [ G, u, v, E_M, F_M] = G_lu(J, z) 
+function [ G, u, v, E_M] = G_lu(J, z) 
 %tr_lu Calculate the value of G and its derivatives
 %   x - variable 
 %   J - Jacobian function: evaluates J(x)
@@ -31,9 +31,6 @@ u=((((L_Mat))'))\b;
 G=aa;
 
 E_M=sparse(eye(size(J)));
-F_M=E_M;
-
-
 
 end
 
