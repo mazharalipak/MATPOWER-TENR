@@ -18,14 +18,17 @@ tol=1e-10;
 
 New_UMat=bsxfun(@rdivide, U_Mat(1:end,:), diag(U_Mat));
 
+[aa,bb]=min(abs(diag(U_Mat)));
+
+
 b=zeros(size(J,1),1);                %% Right hand side ....(nth column of Identity matrix)
-b(end,1)=1;
+b(bb,1)=1;
 
 v=(New_UMat)\b;                    
 
 u=((((L_Mat))'))\b;
 
-G=U_Mat(end,end);
+G=aa;
 
 E_M=sparse(eye(size(J)));
 F_M=E_M;
