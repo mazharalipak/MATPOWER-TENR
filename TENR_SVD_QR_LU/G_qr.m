@@ -1,14 +1,11 @@
-function [ G, u, v, E_M, F_M ] = G_qr(J, z)
+function [ G, u, v, E_M] = G_qr(J, z)
 %tr_qr Calculate the value of G and its derivatives
 %   x - variable 
 %   J - Jacobian function: evaluates J(x)
 
 [Q,R,E]=qr(J);
 
-F_M=sparse(eye(size(J)));        %  I matrix
 E_M=E;                           % Permutation Matix for 
-
-
 
 b=zeros(size(J,1),1);             %% Right hand side ....(nth column of Identity matrix)
 b(end,end)=1;
