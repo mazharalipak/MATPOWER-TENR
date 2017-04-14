@@ -42,7 +42,7 @@ tic;
 Tole = 1;  
 Iter = 1;
 counter = 0;
-while (Tole > 1e-3)  
+while (Tole > 1e-1)  
  
 %% TENR Iteration 
 
