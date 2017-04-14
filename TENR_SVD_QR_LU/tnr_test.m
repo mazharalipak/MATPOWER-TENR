@@ -75,12 +75,6 @@ Qgen_cal= imag(V .*conj(tnr.Ybus * V))+ (sol.bus(:,4)./100);
 x=x+step*dx;
 l=l+step*dl;
 t=t+step*dt;
-
-
-% [~, a, ~] = svds(J, 1,0);
-
-% stab_Index(Iter)=a;
-% stab_Indexr=stab_Index./stab_Index(1,1);
  
 %% Checking Tolerance.......
 
@@ -92,8 +86,6 @@ t=t+step*dt;
     end    
 end
 
-% semilogy(1:Iter-1, stab_Indexr)
-% axis([-Inf Inf -Inf Inf])
 toc;
 end
 
