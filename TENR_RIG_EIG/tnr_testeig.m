@@ -1,6 +1,7 @@
 
-function [Tole,l,Iter]=tnr_test(datain,step)
+function [Tole,l,Iter]=tnr_testeig(datain)
 %% Input Test case Structure and Intitial start.........................
+step=0.4;
 testcase = datain;
 mpc = loadcase(testcase);
 mpc = ext2int(mpc);
@@ -22,7 +23,7 @@ Iter = 1;
 counter = 0;
 tic;
 
-while (Tole > 1e-1)  
+while (Tole > 1e-3)  
 [ dx, dl,dz,dMM] = tnr_step( x, l, z, tnr);
 x=x+step*dx;
 l=l+step*dl;
